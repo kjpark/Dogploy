@@ -1,6 +1,19 @@
 version: "3"
 services:
-
+  mysql:
+    image: mysql:8.0.17
+    networks:
+      backend:
+        aliases:
+          - db
+    volumes:
+      - ./init.sql:/data/application/init.sql
+      - ./db:/var/lib/mysql
+    command: --init-file /data/application/init.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$$3cureUS
+      - MYSQL_DATABASE=db
+      
   models:
     image: tp33/django
     volumes:
