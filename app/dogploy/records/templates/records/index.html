@@ -1,0 +1,20 @@
+<h1>THIS IS THE DATA</h1>
+
+<h2>Vets</h2>
+{% for vet in vets %}
+    <p>{{ vet.first_name }}</p>
+    <p>{{ vet.last_name }}</p>
+{% endfor %}
+
+<h2>Animals</h2>
+{% for animal in animals %}
+    <p>{{ animal.species }}</p>
+    <p>{{ animal.age }}</p>
+    <p>{{ animal.owner }}</p>
+{% endfor %}
+
+<h2>Owners </h2>
+{% for owner in owners %}
+    <p>{{ owner.name }}</p>
+    <p>{{ owner.address }}</p>
+{% endfor %}
