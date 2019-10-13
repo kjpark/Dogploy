@@ -23,6 +23,7 @@ services:
     networks:
       - backend
     command: bash -c "mod_wsgi-express start-server --working-directory  ./dogploy --reload-on-changes ./dogploy/dogploy/wsgi.py && python ./app/dogploy/manage.py makemigrations && python .app/dogploy/manage.py migrate"
+    depends_on: mysql
 
 networks:
   backend:
