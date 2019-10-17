@@ -22,7 +22,8 @@ services:
       - "8001:8000"
     networks:
       - backend
-    command: bash -c "mod_wsgi-express start-server --working-directory  ./dogploy --reload-on-changes ./dogploy/dogploy/wsgi.py && python ./app/dogploy/manage.py makemigrations && python .app/dogploy/manage.py migrate"
+    command: bash -c "python .app/dogploy/manage.py migrate && mod_wsgi-express start-server --working-directory  ./dogploy --reload-on-changes ./dogploy/dogploy/wsgi.py"
+        # makemigrations before if models changed
     depends_on:
       - mysql
 
