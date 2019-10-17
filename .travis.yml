@@ -10,10 +10,10 @@ before_install:
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
 install:
-- mkdir ~/build/rashidlasker/rebu/db"
+- mkdir ~/build/kjpark/Dogploy/db"
 before_script:
 - docker-compose up -d
-- sleep 30
+- sleep 5
 - docker ps -a
 script:
 - curl localhost:8000/ -f
