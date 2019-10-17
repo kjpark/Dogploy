@@ -13,7 +13,7 @@ install:
 - mkdir ~/build/kjpark/Dogploy/db
 before_script:
 - docker-compose up -d
-- sleep 5
+- sleep 20
 - docker ps -a
 script:
 - curl localhost:8001/ -f

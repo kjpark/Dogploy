@@ -22,7 +22,7 @@ services:
       - "8001:8000"
     networks:
       - backend
-    command: bash -c "sleep 5 && python ./dogploy/manage.py migrate && mod_wsgi-express start-server --working-directory  ./dogploy --reload-on-changes ./dogploy/dogploy/wsgi.py"
+    command: bash -c "sleep 15 && python ./dogploy/manage.py migrate && mod_wsgi-express start-server --working-directory  ./dogploy --reload-on-changes ./dogploy/dogploy/wsgi.py"
         # makemigrations before if models changed
     depends_on:
       - mysql
