@@ -10,7 +10,7 @@ before_install:
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
 install:
-- mkdir ~/build/kjpark/Dogploy/db"
+- mkdir ~/build/kjpark/Dogploy/db
 before_script:
 - docker-compose up -d
 - sleep 5
