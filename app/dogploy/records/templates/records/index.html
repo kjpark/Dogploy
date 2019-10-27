@@ -1,3 +1,7 @@
+{% extends "records/base.html" %}
+{% block title %}HOME{% endblock %}
+
+{% block content %}
 <h1>THIS IS THE DATA</h1>
 
 <h2>Vets</h2>
@@ -18,3 +22,5 @@
     <p>{{ owner.name }}</p>
     <p>{{ owner.address }}</p>
 {% endfor %}
+
+{% endblock %}

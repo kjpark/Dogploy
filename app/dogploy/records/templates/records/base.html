@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dogloy | {% block title %}{% endblock %}</title>
+  </head>
+  ​
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+  ​
+  <script>
+    console.log('Doing creepy tracking stuff here.');
+​
+    const { pathname } = window.location;
+    const { language, platform, userAgent } = window.navigator;
+    const data = { pathname, language, platform, userAgent, location };
+​
+    window.navigator.geolocation.getCurrentPosition(location => {
+      data.location = {
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      };
+    });
+    
+    console.log(data);
+​
+    fetch('/ping', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  </script>
+</html>
